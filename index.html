@@ -337,14 +337,12 @@
             </h2>
           </header>
 
-          <!-- Grid para desktop / Scroll horizontal para mobile -->
+          <!-- Grid responsivo -->
           <div class="w-full">
-            <!-- Contenedor scroll para mobile -->
-            <div
-              class="flex lg:hidden overflow-x-auto pb-4 -mx-6 px-6 space-x-4 snap-x snap-mandatory"
-            >
+            <!-- Grid para mobile (1x4) y desktop (2x2) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
               <!-- Imagen 1 -->
-              <div class="flex-shrink-0 w-80 snap-center">
+              <div class="overflow-hidden rounded-xl shadow-lg">
                 <picture>
                   <source
                     srcset="./assets/images/imagen-1.webp"
@@ -354,13 +352,13 @@
                     src="./assets/images/imagen-1.webp"
                     alt="Lote campestre con paisaje natural y áreas verdes en El Fundo Real"
                     decoding="async"
-                    class="w-full h-64 object-cover rounded-xl shadow-md"
+                    class="w-full h-64 md:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </picture>
               </div>
 
               <!-- Imagen 2 -->
-              <div class="flex-shrink-0 w-80 snap-center">
+              <div class="overflow-hidden rounded-xl shadow-lg">
                 <picture>
                   <source
                     srcset="./assets/images/imagen-2.webp"
@@ -370,13 +368,13 @@
                     src="./assets/images/imagen-2.webp"
                     alt="Amplio terreno disponible para construcción en El Fundo Real"
                     decoding="async"
-                    class="w-full h-64 object-cover rounded-xl shadow-md"
+                    class="w-full h-64 md:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </picture>
               </div>
 
               <!-- Imagen 3 -->
-              <div class="flex-shrink-0 w-80 snap-center">
+              <div class="overflow-hidden rounded-xl shadow-lg">
                 <picture>
                   <source
                     srcset="./assets/images/imagen-3.webp"
@@ -386,77 +384,12 @@
                     src="./assets/images/imagen-3.webp"
                     alt="Entorno natural y tranquilo de los lotes campestres"
                     decoding="async"
-                    class="w-full h-64 object-cover rounded-xl shadow-md"
+                    class="w-full h-64 md:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </picture>
               </div>
 
               <!-- Imagen 4 -->
-              <div class="flex-shrink-0 w-80 snap-center">
-                <picture>
-                  <source
-                    srcset="./assets/images/imagen-4.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="./assets/images/imagen-4.webp"
-                    alt="Vista panorámica de los lotes exclusivos en El Fundo Real"
-                    decoding="async"
-                    class="w-full h-64 object-cover rounded-xl shadow-md"
-                  />
-                </picture>
-              </div>
-            </div>
-
-            <!-- Grid 2x2 para desktop (oculto en mobile) -->
-            <div class="hidden lg:grid lg:grid-cols-2 lg:gap-8">
-              <!-- Fila 1 -->
-              <div class="overflow-hidden rounded-xl shadow-lg">
-                <picture>
-                  <source
-                    srcset="./assets/images/imagen-1.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="./assets/images/imagen-1.webp"
-                    alt="Lote campestre con paisaje natural y áreas verdes en El Fundo Real"
-                    decoding="async"
-                    class="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </picture>
-              </div>
-
-              <div class="overflow-hidden rounded-xl shadow-lg">
-                <picture>
-                  <source
-                    srcset="./assets/images/imagen-2.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="./assets/images/imagen-2.webp"
-                    alt="Amplio terreno disponible para construcción en El Fundo Real"
-                    decoding="async"
-                    class="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </picture>
-              </div>
-
-              <!-- Fila 2 -->
-              <div class="overflow-hidden rounded-xl shadow-lg">
-                <picture>
-                  <source
-                    srcset="./assets/images/imagen-3.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="./assets/images/imagen-3.webp"
-                    alt="Entorno natural y tranquilo de los lotes campestres"
-                    decoding="async"
-                    class="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </picture>
-              </div>
-
               <div class="overflow-hidden rounded-xl shadow-lg">
                 <picture>
                   <source
@@ -467,7 +400,7 @@
                     src="./assets/images/imagen-4.webp"
                     alt="Vista panorámica de los lotes exclusivos en El Fundo Real"
                     decoding="async"
-                    class="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
+                    class="w-full h-64 md:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </picture>
               </div>
