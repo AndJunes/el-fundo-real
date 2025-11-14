@@ -32,114 +32,13 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
       rel="stylesheet"
     />
-
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
-
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 100px;
-      }
-
-      body {
-        font-family: "Poppins", sans-serif;
-        /* Mejoras de rendimiento */
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeSpeed;
-      }
-
-      /* Mejora el rendimiento de las transformaciones y transiciones */
-      .transform {
-        transform: translateZ(0);
-        backface-visibility: hidden;
-        perspective: 1000;
-      }
-
-      /* Optimiza las imágenes */
-      img,
-      video {
-        content-visibility: auto;
-      }
-
-      /* Mejora el scroll en navegadores WebKit */
-      .overflow-x-auto {
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .aspect-9-16 {
-        position: relative;
-        width: 100%;
-        padding-top: 177.78%;
-        /* Mejora rendimiento */
-        transform: translateZ(0);
-      }
-
-      .aspect-9-16 > * {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        /* Mejora rendimiento */
-        transform: translateZ(0);
-      }
-      .bg-custom-blue {
-        background-color: #0d3153;
-      }
-
-      @media (min-width: 768px) {
-        html {
-          scroll-padding-top: 120px;
-        }
-      }
-
-      /* Reduce el repaint en elementos fijos */
-      header {
-        transform: translateZ(0);
-        backface-visibility: hidden;
-      }
-      img {
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-      }
-
-      /* Prevenir recarga durante scroll */
-      .overflow-hidden img {
-        will-change: transform;
-      }
-
-      /* Mejorar performance de hover */
-      .hover\:scale-105 {
-        transform: translateZ(0);
-        backface-visibility: hidden;
-      }
+      @import url("css/tailwind.css");
     </style>
-    <link rel="preload" href="./assets/images/imagen-1.webp" as="image" />
-    <link rel="preload" href="./assets/images/imagen-2.webp" as="image" />
-    <link rel="preload" href="./assets/images/imagen-3.webp" as="image" />
-    <link rel="preload" href="./assets/images/imagen-4.webp" as="image" />
-    <link rel="preload" href="./assets/images/LOGO-DPI.webp" as="image" />
-    <link rel="preload" href="./assets/images/LOGO-FUNDO-REAL.png" as="image" />
-    <link
-      rel="preload"
-      href="./assets/images/mascara-enrique.webp"
-      as="image"
-    />
-    <link
-      rel="preload"
-      href="./assets/images/mascara-patricia.webp"
-      as="image"
-    />
-    <link
-      rel="preload"
-      href="./assets/images/mascara-veronica.webp"
-      as="image"
-    />
   </head>
   <body class="bg-custom-blue">
     <header
-      class="flex flex-row justify-between items-center px-4 py-3 shadow-lg fixed w-full bg-custom-blue z-10"
+      class="flex flex-row justify-between items-center px-4 py-3 fixed w-full z-50"
     >
       <a href="https://dominickpro.com/">
         <img
@@ -161,33 +60,44 @@
       />
     </header>
 
-    <main class="pt-24">
-      <!-- Sección Hero mejorada -->
-      <section class="bg-custom-blue py-12 md:py-20 px-6" id="lead-section">
-        <div class="container mx-auto max-w-6xl">
+    <main>
+      <section
+        class="relative min-h-screen flex items-center px-6"
+        id="lead-section"
+      >
+        <div class="absolute inset-0 z-0">
+          <img
+            src="./assets/images/background-hero.webp"
+            alt="Fondo El Fundo Real"
+            class="w-full h-full object-cover brightness-[0.5] contrast-110"
+          />
+          <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <div class="container mx-auto max-w-6xl relative z-10 py-12">
           <div
-            class="flex flex-col lg:flex-row items-center justify-between gap-10"
+            class="flex flex-col lg:flex-row items-center justify-between gap-12"
           >
-            <!-- Contenido de texto -->
             <div class="lg:w-1/2 text-center lg:text-left">
               <h1
-                class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+                class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
               >
                 El Fundo Real
               </h1>
-              <p class="text-xl md:text-2xl text-gray-100 mb-8 leading-relaxed">
+              <p
+                class="text-xl md:text-2xl text-gray-100 mb-8 leading-relaxed font-light"
+              >
                 Construye el futuro que sueñas rodeado de naturaleza y
                 oportunidades.
               </p>
             </div>
 
-            <!-- Formulario -->
             <div class="lg:w-1/2 w-full max-w-md">
-              <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg">
-                <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">
+              <div class="bg-white p-8 rounded-2xl shadow-2xl">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">
                   Solicita información
                 </h3>
-                <form id="lead-form" class="space-y-4">
+                <form id="lead-form" class="space-y-5">
                   <input
                     type="hidden"
                     name="__endpoint"
@@ -201,7 +111,7 @@
                       type="text"
                       required
                       placeholder="Tu nombre completo"
-                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition"
+                      class="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition bg-gray-50"
                     />
                   </div>
 
@@ -212,15 +122,15 @@
                       type="tel"
                       required
                       placeholder="Tu número de celular"
-                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition"
+                      class="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition bg-gray-50"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-lg text-lg transition transform hover:scale-[1.02]"
+                    class="w-full btn-primary text-white font-bold py-4 rounded-xl text-lg shadow-lg"
                   >
-                    Enviar
+                    Enviar solicitud
                   </button>
                   <p
                     id="form-status"
@@ -232,32 +142,29 @@
           </div>
         </div>
       </section>
-      <!-- Sección: ¿Por qué elegir un lote campestre? -->
-      <section id="por-que-elegir" class="py-16 bg-gray-50">
+
+      <section id="por-que-elegir" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6 max-w-6xl">
-          <!-- Encabezado -->
-          <header class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
               ¿Por qué elegir un lote campestre?
             </h2>
             <p
-              class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed"
+              class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-light"
             >
               Naturaleza, crecimiento y libertad se unen para construir el
               futuro que imaginas.
             </p>
-          </header>
+          </div>
 
-          <!-- Grid de Cards -->
           <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
           >
-            <!-- Card 1: Naturaleza y bienestar -->
             <article
-              class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300"
+              class="bg-white rounded-2xl p-8 card-hover border border-gray-100"
             >
-              <div class="flex items-center mb-4">
-                <i class="material-icons-round text-green-500 text-3xl mr-3"
+              <div class="flex items-center mb-5">
+                <i class="material-icons-round text-green-500 text-4xl mr-4"
                   >spa</i
                 >
                 <h3 class="text-xl font-semibold text-blue-900">
@@ -266,17 +173,15 @@
               </div>
               <p class="text-gray-600 leading-relaxed">
                 Escapa del ruido de la ciudad y redescubre la paz que solo la
-                naturaleza puede ofrecer. Vive rodeado de aire puro, paisajes
-                únicos y una sensación de equilibrio cada día.
+                naturaleza puede ofrecer.
               </p>
             </article>
 
-            <!-- Card 2: Inversión inteligente -->
             <article
-              class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300"
+              class="bg-white rounded-2xl p-8 card-hover border border-gray-100"
             >
-              <div class="flex items-center mb-4">
-                <i class="material-icons-round text-green-500 text-3xl mr-3"
+              <div class="flex items-center mb-5">
+                <i class="material-icons-round text-green-500 text-4xl mr-4"
                   >trending_up</i
                 >
                 <h3 class="text-xl font-semibold text-blue-900">
@@ -285,17 +190,15 @@
               </div>
               <p class="text-gray-600 leading-relaxed">
                 Haz crecer tu patrimonio con una propiedad que aumenta su valor
-                con el tiempo. Invierte en una zona con alta plusvalía y
-                verdadero potencial de desarrollo.
+                con el tiempo.
               </p>
             </article>
 
-            <!-- Card 3: Diseña a tu manera -->
             <article
-              class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300"
+              class="bg-white rounded-2xl p-8 card-hover border border-gray-100"
             >
-              <div class="flex items-center mb-4">
-                <i class="material-icons-round text-green-500 text-3xl mr-3"
+              <div class="flex items-center mb-5">
+                <i class="material-icons-round text-green-500 text-4xl mr-4"
                   >architecture</i
                 >
                 <h3 class="text-xl font-semibold text-blue-900">
@@ -304,16 +207,15 @@
               </div>
               <p class="text-gray-600 leading-relaxed">
                 Disfruta la libertad de construir la casa de tus sueños, a tu
-                estilo, a tu ritmo y con tus reglas. Tu espacio, tus decisiones.
+                estilo y ritmo.
               </p>
             </article>
 
-            <!-- Card 4: Comunidad exclusiva -->
             <article
-              class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300"
+              class="bg-white rounded-2xl p-8 card-hover border border-gray-100"
             >
-              <div class="flex items-center mb-4">
-                <i class="material-icons-round text-green-500 text-3xl mr-3"
+              <div class="flex items-center mb-5">
+                <i class="material-icons-round text-green-500 text-4xl mr-4"
                   >groups</i
                 >
                 <h3 class="text-xl font-semibold text-blue-900">
@@ -321,17 +223,16 @@
                 </h3>
               </div>
               <p class="text-gray-600 leading-relaxed">
-                Convive con personas que valoran la tranquilidad, el respeto por
-                la naturaleza y un estilo de vida auténtico.
+                Convive con personas que valoran la tranquilidad y respeto por
+                la naturaleza.
               </p>
             </article>
 
-            <!-- Card 5: Vida al aire libre -->
             <article
-              class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300"
+              class="bg-white rounded-2xl p-8 card-hover border border-gray-100"
             >
-              <div class="flex items-center mb-4">
-                <i class="material-icons-round text-green-500 text-3xl mr-3"
+              <div class="flex items-center mb-5">
+                <i class="material-icons-round text-green-500 text-4xl mr-4"
                   >outdoor_grill</i
                 >
                 <h3 class="text-xl font-semibold text-blue-900">
@@ -339,17 +240,16 @@
                 </h3>
               </div>
               <p class="text-gray-600 leading-relaxed">
-                Disfruta de amplios espacios para practicar deporte, hacer
-                parrilladas y crear momentos memorables.
+                Disfruta de amplios espacios para deporte, parrilladas y
+                momentos memorables.
               </p>
             </article>
 
-            <!-- Card 6: Seguridad y privacidad -->
             <article
-              class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300"
+              class="bg-white rounded-2xl p-8 card-hover border border-gray-100"
             >
-              <div class="flex items-center mb-4">
-                <i class="material-icons-round text-green-500 text-3xl mr-3"
+              <div class="flex items-center mb-5">
+                <i class="material-icons-round text-green-500 text-4xl mr-4"
                   >security</i
                 >
                 <h3 class="text-xl font-semibold text-blue-900">
@@ -357,101 +257,90 @@
                 </h3>
               </div>
               <p class="text-gray-600 leading-relaxed">
-                Vive con la tranquilidad de saber que tu familia y tus proyectos
+                Vive con la tranquilidad de saber que tu familia y proyectos
                 están protegidos.
               </p>
             </article>
           </div>
 
-          <!-- Botón de acción -->
-          <footer class="text-center">
+          <div class="text-center">
             <a
               href="#lead-section"
-              class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition transform hover:scale-105 shadow-md"
+              class="inline-block btn-primary text-white font-bold py-4 px-12 rounded-xl text-lg shadow-lg"
             >
               Quiero registrarme al Zoom
             </a>
-          </footer>
+          </div>
         </div>
       </section>
-      <!-- Sección: Explora nuestros lotes exclusivos -->
-      <section class="py-16 bg-white">
+
+      <section class="py-20 bg-white">
         <div class="container mx-auto px-6 max-w-6xl">
-          <header class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
               Explora nuestros lotes exclusivos
             </h2>
-          </header>
+          </div>
 
-          <!-- Grid responsivo -->
-          <div class="w-full">
-            <!-- Grid para mobile (1x4) y desktop (2x2) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-              <!-- Imagen 1 -->
-              <div class="overflow-hidden rounded-xl shadow-lg">
-                <img
-                  src="./assets/images/imagen-1.webp"
-                  alt="Lote campestre con paisaje natural y áreas verdes en El Fundo Real"
-                  width="800"
-                  height="600"
-                  loading="eager"
-                  class="w-full h-64 md:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="overflow-hidden rounded-2xl shadow-lg">
+              <img
+                src="./assets/images/imagen-1.webp"
+                alt="Lote campestre con paisaje natural"
+                width="800"
+                height="600"
+                loading="eager"
+                class="w-full h-80 md:h-96 object-cover image-hover"
+              />
+            </div>
 
-              <!-- Imagen 2 -->
-              <div class="overflow-hidden rounded-xl shadow-lg">
-                <img
-                  src="./assets/images/imagen-2.webp"
-                  alt="Amplio terreno disponible para construcción en El Fundo Real"
-                  width="800"
-                  height="600"
-                  loading="eager"
-                  class="w-full h-64 md:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
+            <div class="overflow-hidden rounded-2xl shadow-lg">
+              <img
+                src="./assets/images/imagen-2.webp"
+                alt="Amplio terreno disponible"
+                width="800"
+                height="600"
+                loading="eager"
+                class="w-full h-80 md:h-96 object-cover image-hover"
+              />
+            </div>
 
-              <!-- Imagen 3 -->
-              <div class="overflow-hidden rounded-xl shadow-lg">
-                <img
-                  src="./assets/images/imagen-3.webp"
-                  alt="Entorno natural y tranquilo de los lotes campestres"
-                  width="800"
-                  height="600"
-                  loading="eager"
-                  class="w-full h-64 md:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
+            <div class="overflow-hidden rounded-2xl shadow-lg">
+              <img
+                src="./assets/images/imagen-3.webp"
+                alt="Entorno natural y tranquilo"
+                width="800"
+                height="600"
+                loading="eager"
+                class="w-full h-80 md:h-96 object-cover image-hover"
+              />
+            </div>
 
-              <!-- Imagen 4 -->
-              <div class="overflow-hidden rounded-xl shadow-lg">
-                <img
-                  src="./assets/images/imagen-4.webp"
-                  alt="Vista panorámica de los lotes exclusivos en El Fundo Real"
-                  width="800"
-                  height="600"
-                  loading="eager"
-                  class="w-full h-64 md:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
+            <div class="overflow-hidden rounded-2xl shadow-lg">
+              <img
+                src="./assets/images/imagen-4.webp"
+                alt="Vista panorámica exclusiva"
+                width="800"
+                height="600"
+                loading="eager"
+                class="w-full h-80 md:h-96 object-cover image-hover"
+              />
             </div>
           </div>
         </div>
       </section>
-      <!-- Sección: Testimonios -->
-      <section class="py-16 bg-gray-50">
+
+      <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6 max-w-6xl">
-          <header class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
               Historias reales, experiencias reales
             </h2>
-          </header>
+          </div>
 
-          <!-- Grid de videos testimoniales -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <!-- Testimonio 1 - Enrique -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <article class="text-center">
-              <div class="relative mx-auto max-w-xs mb-4">
+              <div class="relative mx-auto max-w-xs mb-6">
                 <div
                   class="aspect-9-16 rounded-2xl overflow-hidden shadow-lg bg-gray-200"
                 >
@@ -466,7 +355,6 @@
                       src="./assets/videos/testimonio-enrique.mp4"
                       type="video/mp4"
                     />
-                    Tu navegador no soporta el elemento video.
                   </video>
                 </div>
               </div>
@@ -474,9 +362,8 @@
               <p class="text-sm text-gray-600">Cliente Fundo Real</p>
             </article>
 
-            <!-- Testimonio 2 - Patricia -->
             <article class="text-center">
-              <div class="relative mx-auto max-w-xs mb-4">
+              <div class="relative mx-auto max-w-xs mb-6">
                 <div
                   class="aspect-9-16 rounded-2xl overflow-hidden shadow-lg bg-gray-200"
                 >
@@ -491,7 +378,6 @@
                       src="./assets/videos/testimonio-patricia.mp4"
                       type="video/mp4"
                     />
-                    Tu navegador no soporta el elemento video.
                   </video>
                 </div>
               </div>
@@ -499,9 +385,8 @@
               <p class="text-sm text-gray-600">Cliente Fundo Real</p>
             </article>
 
-            <!-- Testimonio 3 - Veronica -->
             <article class="text-center">
-              <div class="relative mx-auto max-w-xs mb-4">
+              <div class="relative mx-auto max-w-xs mb-6">
                 <div
                   class="aspect-9-16 rounded-2xl overflow-hidden shadow-lg bg-gray-200"
                 >
@@ -516,7 +401,6 @@
                       src="./assets/videos/testimonio-veronica.mp4"
                       type="video/mp4"
                     />
-                    Tu navegador no soporta el elemento video.
                   </video>
                 </div>
               </div>
@@ -525,45 +409,43 @@
             </article>
           </div>
 
-          <!-- Botón de acción -->
-          <footer class="text-center">
+          <div class="text-center">
             <a
               href="#lead-section"
-              class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition transform hover:scale-105 shadow-md"
+              class="inline-block btn-primary text-white font-bold py-4 px-12 rounded-xl text-lg shadow-lg"
             >
-              Quiero formar parte de la experiencia
+              Quiero formar parte
             </a>
-          </footer>
+          </div>
         </div>
       </section>
     </main>
+
     <script src="./js/form.js"></script>
-  </body>
-  <!-- Footer -->
-  <footer class="bg-gray-800 py-8">
-    <div class="container mx-auto px-6 max-w-6xl">
-      <div class="text-center">
-        <p class="text-gray-300 mb-2">
-          © 2025 Dominick Pro Inmobiliaria / El Fundo Real. Todos los derechos
-          reservados.
-        </p>
-        <p class="text-gray-400">
-          Hecho con
-          <i
-            class="material-icons-round text-blue-400 text-base align-middle mx-1"
-            >favorite</i
-          >
-          por
-          <a
-            href="https://www.minddevperu.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-blue-300 hover:text-blue-200 transition-colors duration-200"
-          >
-            MindDev
-          </a>
-        </p>
+
+    <footer class="bg-gray-800 py-12">
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="text-center">
+          <p class="text-gray-300 mb-3 text-lg">
+            © 2025 Dominick Pro Inmobiliaria / El Fundo Real
+          </p>
+          <p class="text-gray-400 text-sm">
+            Hecho con
+            <i
+              class="material-icons-round text-blue-400 text-base align-middle mx-1"
+              >favorite</i
+            >
+            por
+            <a
+              href="https://www.minddevperu.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-300 hover:text-blue-200 transition-colors duration-200"
+              >MindDev</a
+            >
+          </p>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </body>
 </html>
