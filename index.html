@@ -24,7 +24,7 @@
     />
     <link
       rel="shortcut icon"
-      href="./assets/images/LOGO-DPI.webp"
+      href="./assets/images/head-icon.png"
       type="image/x-icon"
     />
     <link rel="preconnect" href="https://getform.io" crossorigin />
@@ -37,10 +37,29 @@
 
       html {
         scroll-behavior: smooth;
+        scroll-padding-top: 100px;
       }
 
       body {
         font-family: "Poppins", sans-serif;
+      }
+      .aspect-9-16 {
+        position: relative;
+        width: 100%;
+        padding-top: 177.78%;
+      }
+
+      .aspect-9-16 > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+      @media (min-width: 768px) {
+        html {
+          scroll-padding-top: 120px;
+        }
       }
     </style>
   </head>
@@ -64,7 +83,7 @@
 
     <main class="pt-24">
       <!-- Sección Hero mejorada -->
-      <section class="bg-blue-900 py-12 md:py-20 px-6">
+      <section class="bg-blue-900 py-12 md:py-20 px-6" id="lead-form">
         <div class="container mx-auto max-w-6xl">
           <div
             class="flex flex-col lg:flex-row items-center justify-between gap-10"
@@ -275,8 +294,287 @@
           </footer>
         </div>
       </section>
-    </main>
+      <!-- Sección: Explora nuestros lotes exclusivos -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 max-w-6xl">
+          <header class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+              Explora nuestros lotes exclusivos
+            </h2>
+          </header>
 
+          <!-- Grid para desktop / Scroll horizontal para mobile -->
+          <div class="w-full">
+            <!-- Contenedor scroll para mobile -->
+            <div
+              class="flex lg:hidden overflow-x-auto pb-4 -mx-6 px-6 space-x-4 snap-x snap-mandatory"
+            >
+              <!-- Imagen 1 -->
+              <div class="flex-shrink-0 w-80 snap-center">
+                <picture>
+                  <source
+                    srcset="./assets/images/imagen-1.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="./assets/images/imagen-1.webp"
+                    alt="Lote campestre con paisaje natural y áreas verdes en El Fundo Real"
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full h-64 object-cover rounded-xl shadow-md"
+                  />
+                </picture>
+              </div>
+
+              <!-- Imagen 2 -->
+              <div class="flex-shrink-0 w-80 snap-center">
+                <picture>
+                  <source
+                    srcset="./assets/images/imagen-2.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="./assets/images/imagen-2.webp"
+                    alt="Amplio terreno disponible para construcción en El Fundo Real"
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full h-64 object-cover rounded-xl shadow-md"
+                  />
+                </picture>
+              </div>
+
+              <!-- Imagen 3 -->
+              <div class="flex-shrink-0 w-80 snap-center">
+                <picture>
+                  <source
+                    srcset="./assets/images/imagen-3.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="./assets/images/imagen-3.webp"
+                    alt="Entorno natural y tranquilo de los lotes campestres"
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full h-64 object-cover rounded-xl shadow-md"
+                  />
+                </picture>
+              </div>
+
+              <!-- Imagen 4 -->
+              <div class="flex-shrink-0 w-80 snap-center">
+                <picture>
+                  <source
+                    srcset="./assets/images/imagen-4.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="./assets/images/imagen-4.webp"
+                    alt="Vista panorámica de los lotes exclusivos en El Fundo Real"
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full h-64 object-cover rounded-xl shadow-md"
+                  />
+                </picture>
+              </div>
+            </div>
+
+            <!-- Grid 2x2 para desktop (oculto en mobile) -->
+            <div class="hidden lg:grid lg:grid-cols-2 lg:gap-8">
+              <!-- Fila 1 -->
+              <div class="overflow-hidden rounded-xl shadow-lg">
+                <picture>
+                  <source
+                    srcset="./assets/images/imagen-1.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="./assets/images/imagen-1.webp"
+                    alt="Lote campestre con paisaje natural y áreas verdes en El Fundo Real"
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </picture>
+              </div>
+
+              <div class="overflow-hidden rounded-xl shadow-lg">
+                <picture>
+                  <source
+                    srcset="./assets/images/imagen-2.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="./assets/images/imagen-2.webp"
+                    alt="Amplio terreno disponible para construcción en El Fundo Real"
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </picture>
+              </div>
+
+              <!-- Fila 2 -->
+              <div class="overflow-hidden rounded-xl shadow-lg">
+                <picture>
+                  <source
+                    srcset="./assets/images/imagen-3.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="./assets/images/imagen-3.webp"
+                    alt="Entorno natural y tranquilo de los lotes campestres"
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </picture>
+              </div>
+
+              <div class="overflow-hidden rounded-xl shadow-lg">
+                <picture>
+                  <source
+                    srcset="./assets/images/imagen-4.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="./assets/images/imagen-4.webp"
+                    alt="Vista panorámica de los lotes exclusivos en El Fundo Real"
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Sección: Testimonios -->
+      <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-6xl">
+          <header class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+              Historias reales, experiencias reales
+            </h2>
+          </header>
+
+          <!-- Grid de videos testimoniales -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <!-- Testimonio 1 - Enrique -->
+            <article class="text-center">
+              <div class="relative mx-auto max-w-xs mb-4">
+                <div
+                  class="aspect-9-16 rounded-2xl overflow-hidden shadow-lg bg-gray-200"
+                >
+                  <video
+                    class="w-full h-full object-cover"
+                    poster="./assets/images/mascara-enrique.webp"
+                    preload="metadata"
+                    controls
+                    controlsList="nodownload"
+                  >
+                    <source
+                      src="./assets/videos/testimonio-enrique.mp4"
+                      type="video/mp4"
+                    />
+                    Tu navegador no soporta el elemento video.
+                  </video>
+                </div>
+              </div>
+              <h3 class="text-lg font-semibold text-blue-900">Enrique</h3>
+              <p class="text-sm text-gray-600">Cliente Fundo Real</p>
+            </article>
+
+            <!-- Testimonio 2 - Patricia -->
+            <article class="text-center">
+              <div class="relative mx-auto max-w-xs mb-4">
+                <div
+                  class="aspect-9-16 rounded-2xl overflow-hidden shadow-lg bg-gray-200"
+                >
+                  <video
+                    class="w-full h-full object-cover"
+                    poster="./assets/images/mascara-patricia.webp"
+                    preload="metadata"
+                    controls
+                    controlsList="nodownload"
+                  >
+                    <source
+                      src="./assets/videos/testimonio-patricia.mp4"
+                      type="video/mp4"
+                    />
+                    Tu navegador no soporta el elemento video.
+                  </video>
+                </div>
+              </div>
+              <h3 class="text-lg font-semibold text-blue-900">Patricia</h3>
+              <p class="text-sm text-gray-600">Cliente Fundo Real</p>
+            </article>
+
+            <!-- Testimonio 3 - Veronica -->
+            <article class="text-center">
+              <div class="relative mx-auto max-w-xs mb-4">
+                <div
+                  class="aspect-9-16 rounded-2xl overflow-hidden shadow-lg bg-gray-200"
+                >
+                  <video
+                    class="w-full h-full object-cover"
+                    poster="./assets/images/mascara-veronica.webp"
+                    preload="metadata"
+                    controls
+                    controlsList="nodownload"
+                  >
+                    <source
+                      src="./assets/videos/testimonio-veronica.mp4"
+                      type="video/mp4"
+                    />
+                    Tu navegador no soporta el elemento video.
+                  </video>
+                </div>
+              </div>
+              <h3 class="text-lg font-semibold text-blue-900">Verónica</h3>
+              <p class="text-sm text-gray-600">Cliente Fundo Real</p>
+            </article>
+          </div>
+
+          <!-- Botón de acción -->
+          <footer class="text-center">
+            <a
+              href="#lead-form"
+              class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition transform hover:scale-105 shadow-md"
+            >
+              Quiero formar parte de la experiencia
+            </a>
+          </footer>
+        </div>
+      </section>
+    </main>
     <script src="./js/form.js"></script>
   </body>
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-8">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="text-center">
+        <p class="text-gray-300 mb-2">
+          © 2025 Dominick Pro Inmobiliaria / El Fundo Real. Todos los derechos
+          reservados.
+        </p>
+        <p class="text-gray-400">
+          Hecho con
+          <i
+            class="material-icons-round text-blue-400 text-base align-middle mx-1"
+            >favorite</i
+          >
+          por
+          <a
+            href="https://www.minddevperu.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-blue-300 hover:text-blue-200 transition-colors duration-200"
+          >
+            MindDev
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
 </html>
