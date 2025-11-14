@@ -42,11 +42,36 @@
 
       body {
         font-family: "Poppins", sans-serif;
+        /* Mejoras de rendimiento */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeSpeed;
       }
+
+      /* Mejora el rendimiento de las transformaciones y transiciones */
+      .transform {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000;
+      }
+
+      /* Optimiza las imágenes */
+      img,
+      video {
+        content-visibility: auto;
+      }
+
+      /* Mejora el scroll en navegadores WebKit */
+      .overflow-x-auto {
+        -webkit-overflow-scrolling: touch;
+      }
+
       .aspect-9-16 {
         position: relative;
         width: 100%;
         padding-top: 177.78%;
+        /* Mejora rendimiento */
+        transform: translateZ(0);
       }
 
       .aspect-9-16 > * {
@@ -55,11 +80,20 @@
         left: 0;
         right: 0;
         bottom: 0;
+        /* Mejora rendimiento */
+        transform: translateZ(0);
       }
+
       @media (min-width: 768px) {
         html {
           scroll-padding-top: 120px;
         }
+      }
+
+      /* Reduce el repaint en elementos fijos */
+      header {
+        transform: translateZ(0);
+        backface-visibility: hidden;
       }
     </style>
   </head>
@@ -319,7 +353,6 @@
                   <img
                     src="./assets/images/imagen-1.webp"
                     alt="Lote campestre con paisaje natural y áreas verdes en El Fundo Real"
-                    loading="lazy"
                     decoding="async"
                     class="w-full h-64 object-cover rounded-xl shadow-md"
                   />
@@ -336,7 +369,6 @@
                   <img
                     src="./assets/images/imagen-2.webp"
                     alt="Amplio terreno disponible para construcción en El Fundo Real"
-                    loading="lazy"
                     decoding="async"
                     class="w-full h-64 object-cover rounded-xl shadow-md"
                   />
@@ -353,7 +385,6 @@
                   <img
                     src="./assets/images/imagen-3.webp"
                     alt="Entorno natural y tranquilo de los lotes campestres"
-                    loading="lazy"
                     decoding="async"
                     class="w-full h-64 object-cover rounded-xl shadow-md"
                   />
@@ -370,7 +401,6 @@
                   <img
                     src="./assets/images/imagen-4.webp"
                     alt="Vista panorámica de los lotes exclusivos en El Fundo Real"
-                    loading="lazy"
                     decoding="async"
                     class="w-full h-64 object-cover rounded-xl shadow-md"
                   />
@@ -390,7 +420,6 @@
                   <img
                     src="./assets/images/imagen-1.webp"
                     alt="Lote campestre con paisaje natural y áreas verdes en El Fundo Real"
-                    loading="lazy"
                     decoding="async"
                     class="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
                   />
@@ -406,7 +435,6 @@
                   <img
                     src="./assets/images/imagen-2.webp"
                     alt="Amplio terreno disponible para construcción en El Fundo Real"
-                    loading="lazy"
                     decoding="async"
                     class="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
                   />
@@ -423,7 +451,6 @@
                   <img
                     src="./assets/images/imagen-3.webp"
                     alt="Entorno natural y tranquilo de los lotes campestres"
-                    loading="lazy"
                     decoding="async"
                     class="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
                   />
@@ -439,7 +466,6 @@
                   <img
                     src="./assets/images/imagen-4.webp"
                     alt="Vista panorámica de los lotes exclusivos en El Fundo Real"
-                    loading="lazy"
                     decoding="async"
                     class="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
                   />
