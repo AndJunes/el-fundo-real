@@ -32,6 +32,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
       rel="stylesheet"
     />
+
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 
@@ -98,7 +99,43 @@
         transform: translateZ(0);
         backface-visibility: hidden;
       }
+      img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
+
+      /* Prevenir recarga durante scroll */
+      .overflow-hidden img {
+        will-change: transform;
+      }
+
+      /* Mejorar performance de hover */
+      .hover\:scale-105 {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+      }
     </style>
+    <link rel="preload" href="./assets/images/imagen-1.webp" as="image" />
+    <link rel="preload" href="./assets/images/imagen-2.webp" as="image" />
+    <link rel="preload" href="./assets/images/imagen-3.webp" as="image" />
+    <link rel="preload" href="./assets/images/imagen-4.webp" as="image" />
+    <link rel="preload" href="./assets/images/LOGO-DPI.webp" as="image" />
+    <link rel="preload" href="./assets/images/LOGO-FUNDO-REAL.png" as="image" />
+    <link
+      rel="preload"
+      href="./assets/images/mascara-enrique.webp"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="./assets/images/mascara-patricia.webp"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="./assets/images/mascara-veronica.webp"
+      as="image"
+    />
   </head>
   <body class="bg-custom-blue">
     <header
@@ -108,12 +145,18 @@
         <img
           src="./assets/images/LOGO-DPI.webp"
           alt="Dominick Pro Inmobiliaria"
+          width="160"
+          height="60"
+          loading="eager"
           class="w-20 h-auto md:w-32 lg:w-40 transform hover:scale-105 transition duration-300 ease-in-out"
         />
       </a>
       <img
         src="./assets/images/LOGO-FUNDO-REAL.png"
         alt="El Fundo Real"
+        width="192"
+        height="72"
+        loading="eager"
         class="w-24 h-auto md:w-40 lg:w-48 transform hover:scale-105 transition duration-300 ease-in-out"
       />
     </header>
@@ -346,66 +389,50 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
               <!-- Imagen 1 -->
               <div class="overflow-hidden rounded-xl shadow-lg">
-                <picture>
-                  <source
-                    srcset="./assets/images/imagen-1.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="./assets/images/imagen-1.webp"
-                    alt="Lote campestre con paisaje natural y áreas verdes en El Fundo Real"
-                    decoding="async"
-                    class="w-full h-64 md:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </picture>
+                <img
+                  src="./assets/images/imagen-1.webp"
+                  alt="Lote campestre con paisaje natural y áreas verdes en El Fundo Real"
+                  width="800"
+                  height="600"
+                  loading="eager"
+                  class="w-full h-64 md:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                />
               </div>
 
               <!-- Imagen 2 -->
               <div class="overflow-hidden rounded-xl shadow-lg">
-                <picture>
-                  <source
-                    srcset="./assets/images/imagen-2.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="./assets/images/imagen-2.webp"
-                    alt="Amplio terreno disponible para construcción en El Fundo Real"
-                    decoding="async"
-                    class="w-full h-64 md:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </picture>
+                <img
+                  src="./assets/images/imagen-2.webp"
+                  alt="Amplio terreno disponible para construcción en El Fundo Real"
+                  width="800"
+                  height="600"
+                  loading="eager"
+                  class="w-full h-64 md:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                />
               </div>
 
               <!-- Imagen 3 -->
               <div class="overflow-hidden rounded-xl shadow-lg">
-                <picture>
-                  <source
-                    srcset="./assets/images/imagen-3.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="./assets/images/imagen-3.webp"
-                    alt="Entorno natural y tranquilo de los lotes campestres"
-                    decoding="async"
-                    class="w-full h-64 md:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </picture>
+                <img
+                  src="./assets/images/imagen-3.webp"
+                  alt="Entorno natural y tranquilo de los lotes campestres"
+                  width="800"
+                  height="600"
+                  loading="eager"
+                  class="w-full h-64 md:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                />
               </div>
 
               <!-- Imagen 4 -->
               <div class="overflow-hidden rounded-xl shadow-lg">
-                <picture>
-                  <source
-                    srcset="./assets/images/imagen-4.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="./assets/images/imagen-4.webp"
-                    alt="Vista panorámica de los lotes exclusivos en El Fundo Real"
-                    decoding="async"
-                    class="w-full h-64 md:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </picture>
+                <img
+                  src="./assets/images/imagen-4.webp"
+                  alt="Vista panorámica de los lotes exclusivos en El Fundo Real"
+                  width="800"
+                  height="600"
+                  loading="eager"
+                  class="w-full h-64 md:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                />
               </div>
             </div>
           </div>
