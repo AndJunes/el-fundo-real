@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El Fundo Real</title>
+    <meta
+      name="description"
+      content="Construye el futuro que sueñas rodeado de naturaleza y oportunidades. Lotes campestres exclusivos con alta plusvalía. ¡Inversión inteligente!"
+    />
+    <meta
+      name="keywords"
+      content="lotes campestres, inversión inmobiliaria, naturaleza, plusvalía, El Fundo Real, lotes exclusivos"
+    />
+    <meta name="author" content="Dominick Pro Inmobiliaria" />
+    <meta name="robots" content="index, follow" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/LOGO-DPI.webp"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://getform.io" crossorigin />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-blue-900">
+    <header
+      class="flex flex-row justify-between items-center px-4 py-3 shadow-lg fixed w-full bg-blue-900 z-10"
+    >
+      <a href="https://dominickpro.com/">
+        <img
+          src="./assets/images/LOGO-DPI.webp"
+          alt="Dominick Pro Inmobiliaria"
+          class="w-20 h-auto md:w-32 lg:w-40 transform hover:scale-105 transition duration-300 ease-in-out"
+        />
+      </a>
+      <img
+        src="./assets/images/LOGO-FUNDO-REAL.png"
+        alt="El Fundo Real"
+        class="w-24 h-auto md:w-40 lg:w-48 transform hover:scale-105 transition duration-300 ease-in-out"
+      />
+    </header>
+
+    <main class="pt-24">
+      <!-- Sección Hero mejorada -->
+      <section class="bg-blue-900 py-12 md:py-20 px-6">
+        <div class="container mx-auto max-w-6xl">
+          <div
+            class="flex flex-col lg:flex-row items-center justify-between gap-10"
+          >
+            <!-- Contenido de texto -->
+            <div class="lg:w-1/2 text-center lg:text-left">
+              <h1
+                class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+              >
+                El Fundo Real
+              </h1>
+              <p class="text-xl md:text-2xl text-gray-100 mb-8 leading-relaxed">
+                Construye el futuro que sueñas rodeado de naturaleza y
+                oportunidades.
+              </p>
+            </div>
+
+            <!-- Formulario -->
+            <div class="lg:w-1/2 w-full max-w-md">
+              <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">
+                  Solicita información
+                </h3>
+                <form id="lead-form" class="space-y-4">
+                  <input
+                    type="hidden"
+                    name="__endpoint"
+                    value="https://getform.io/f/aejevogb"
+                  />
+
+                  <div>
+                    <input
+                      id="nombre"
+                      name="nombre"
+                      type="text"
+                      required
+                      placeholder="Tu nombre completo"
+                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition"
+                    />
+                  </div>
+
+                  <div>
+                    <input
+                      id="telefono"
+                      name="telefono"
+                      type="tel"
+                      required
+                      placeholder="Tu número de celular"
+                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-lg text-lg transition transform hover:scale-[1.02]"
+                  >
+                    Enviar
+                  </button>
+                  <p
+                    id="form-status"
+                    class="text-sm text-gray-600 mt-2 text-center"
+                  ></p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/form.js"></script>
+  </body>
+</html>
